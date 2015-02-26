@@ -104,7 +104,7 @@ require_once('library.php');
 
 echo '<body>';
 echo "<div>";
-echo "<h3>[<a href='/csi18n' target=_parent>&uarr;</a>|<a href='http://csi18n.mpsvr.com/'>?</a>] csi18n \"Fire Exit\" <a href='original-fireexit.html'>original</a> | <a href='perspective1.html'>inline</a></h3>";
+echo "<h3>[<a href='/csi18n' target=_parent>&uarr;</a>|<a href='http://csi18n.mpsvr.com/' target=_parent>?</a>] csi18n \"Fire Exit\" <a href='original-fireexit.html'>original</a> | <a href='perspective1.html'>inline</a></h3>";
 echo "</div>";
 echo "<div>";
 echo "<img class='mainimage' src='normandcompany-fireexit.png'>";

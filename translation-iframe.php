@@ -50,7 +50,7 @@ if ($printany === true) {
     echo "<input type=text name=cl size=30 value='". urldecode($cl) . "'>Content-Languages<br>";
     echo "<textarea type=text name=translation_iv rows=3 cols=30'></textarea>Translation<br>";
     echo "<select name=visibility_iv size=4>";
-    echo "<option value=anonymous>Anonymous</option>";
+    echo "<option value=anonymous selected>Anonymous</option>";
     echo "<option value=public>Public</option>";
     echo "<option value=private>Private</option>";
     echo "<option value=personal>Personal</option>";

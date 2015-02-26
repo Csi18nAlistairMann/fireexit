@@ -68,7 +68,8 @@ if ($sho_213 === 'true') {
   echo "<hr>";
 }
 
-echo "&nbsp;&nbsp;&nbsp; + [ <font size=-2>214</font> <a href='/csi18n/service' target='_blank'>Join</a> ]<br>";
+echo "&nbsp;&nbsp;&nbsp; + [ <font size=-2>214</font> <a href='https://service.mpsvr.com' target='_blank'>--> Join</a> ]<br>";
+echo "&nbsp;&nbsp;&nbsp; + [ <font size=-2>215</font> <a href='http://csi18n.mpsvr.com/index.php/Fireexit' target='_blank'>--> documentation</a> ]<br>";
 
 echo " + [ <font size=-2>220</font> <a href='$mem&sho_220=true'>Accept-Language</a> ]<br>";
 if ($sho_220 === 'true') {

@@ -27,7 +27,6 @@ $show_source = false;
 $al = $cl = false;
 
 function get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw) {
-  //  $fp = fsockopen("www.pectw.net", 80, $errno, $errstr, 10);
   $fp = fsockopen("tls://rest.mpsvr.com", 443, $errno, $errstr, 10);
   if (!$fp) {
     $error = true;
@@ -74,7 +73,6 @@ function get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $p
 /*
   // superceded in favour of structure that holds status code as well as data
 function get_hash4($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw) {
-  //  $fp = fsockopen("www.pectw.net", 80, $errno, $errstr, 10);
   $fp = fsockopen("tls://rest.mpsvr.com", 443, $errno, $errstr, 10);
   if (!$fp) {
     $error = true;
