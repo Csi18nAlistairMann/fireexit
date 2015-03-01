@@ -33,7 +33,7 @@ if ($printany === true) {
 	$tmpvisibility = escapeHtml($alt['visibility']);
 	$tmplang = escapeHtml($alt['language']);
 	$tmpnewmark = escapeHtml($newmark_iv);
-	$tmpsid = escapeHtml($alt['sid']);
+	$tmpsid = escapeHtml($alt['uploader_sid']);
 	echo "<a href=\"$mem&url2prefer=$url2prefer&do_11100=true&whole_page_reload=true&sid_vi=$visit_sid&trans_sid=$tmpsid&trans_newmark=$tmpnewmark&trans_lang=$tmplang&trans_vis=$tmpvisibility&trans_crid=$tmpcrid&trans_trans=" . escapeHtml($alt['translation']) . "$trans_trans&trans_sid_designer=$trans_sid_designer\">" . escapeHtml($alt['translation']) . '</a> (' . escapeHtml($alt['language']) . ')<br>';
       }
     } else {

@@ -123,7 +123,7 @@ if ($response['cxr'] === false) {
   $visibility_iv = 'anonymous';
   echo "<div class='container1' name='bub1a'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&trans_sid_designer=$trans_sid_designer&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
 } else {
-  $trans_sid = escapeHtml($response['cxr']['sid']);
+  $trans_sid = escapeHtml($response['cxr']['uploader_sid']);
   $trans_lang = escapeHtml($response['cxr']['language']);
   $trans_vis = escapeHtml($response['cxr']['visibility']);
   $trans_crid = escapeHtml($response['cxr']['crid']);
@@ -154,7 +154,7 @@ if ($response['cxr'] === false) {
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
   echo "<div class='container1'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></div>";
 } else {
-  $sid_iv = escapeHtml($response['cxr']['sid']);
+  $sid_iv = escapeHtml($response['cxr']['uploader_sid']);
   $visibility_iv = escapeHtml($response['cxr']['visibility']);
   $crid_iv = escapeHtml($response['cxr']['crid']);
   $translation_iv = escapeHtml($response['cxr']['translation']);
@@ -179,7 +179,7 @@ if ($response['cxr'] === false) {
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
   echo "<div class='container1'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></div>";
 } else {
-  $sid_iv = escapeHtml($response['cxr']['sid']);
+  $sid_iv = escapeHtml($response['cxr']['uploader_sid']);
   $visibility_iv = escapeHtml($response['cxr']['visibility']);
   $crid_iv = escapeHtml($response['cxr']['crid']);
   $translation_iv = escapeHtml($response['cxr']['translation']);
@@ -204,7 +204,7 @@ if ($response['cxr'] === false) {
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
   echo "<div class='container1'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></div>";
 } else {
-  $sid_iv = escapeHtml($response['cxr']['sid']);
+  $sid_iv = escapeHtml($response['cxr']['uploader_sid']);
   $visibility_iv = escapeHtml($response['cxr']['visibility']);
   $crid_iv = escapeHtml($response['cxr']['crid']);
   $translation_iv = escapeHtml($response['cxr']['translation']);
