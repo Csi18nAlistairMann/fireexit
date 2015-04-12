@@ -63,6 +63,7 @@ function get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $p
     } else {
       $xlate = unserialize(trim($body));
       $rv['cxr'] =  $xlate['csi18n_xlate_resource'];
+      $rv['xlate_loc'] = $xlate['csi18n_xlate_location'];
     }
   }
 
@@ -133,7 +134,24 @@ function show_in_tracker($out, $headers, $body) {
   echo "</script>";
 }
 
-function get_hash3($trans_sid, $trans_newmark, $trans_lang, $trans_vis, $trans_crid, $apikey, $un, $pw) {
+function get_hash4simple($url, $apikey, $un, $pw) {
+  //https:\/\/rest.mpsvr.com\/xlates\/1,92\/pk-fireexit\/en-CA\/anonymous\/404
+  $flag = preg_match('|https://rest.mpsvr.com/xlates/(.*)/(.*)/(.*)/(.*)/(.*)|', $url , $match);
+  if (!$flag) {
+    // not called directly, so should only get here if response
+    // from server unexpected
+   return array('status_code' => $url, 'cxr' => false);
+  } else {
+    $sid = $match[1];
+    $newmark = $match[2];
+    $lang = $match[3];
+    $vis = $match[4];
+    $crid = $match[5];
+    return get_hash4xunlvc($sid, $newmark, $lang, $vis, $crid, $apikey, $un, $pw);
+  }
+}
+
+function get_hash4xunlvc($trans_sid, $trans_newmark, $trans_lang, $trans_vis, $trans_crid, $apikey, $un, $pw) {
   $fp = fsockopen("tls://rest.mpsvr.com", 443, $errno, $errstr, 10);
   if (!$fp) {
     $error = true;

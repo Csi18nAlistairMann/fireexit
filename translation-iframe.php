@@ -397,9 +397,9 @@ if ($printany === true) {
       The demosite doesn't demonstrate undelete.
      */
     echo "<hr>";
-    //    $rv = get_hash3($pref_sid, $pref_newmark, $pref_lang, $pref_vis, $pref_crid, $apikey, $un, $pw);
+    //    $rv = get_hash4xunlvc($pref_sid, $pref_newmark, $pref_lang, $pref_vis, $pref_crid, $apikey, $un, $pw);
 
-    $rv = get_hash3($trans_sid, $trans_newmark, $trans_lang, $trans_vis, $trans_crid, $apikey, $un, $pw);
+    $rv = get_hash4xunlvc($trans_sid, $trans_newmark, $trans_lang, $trans_vis, $trans_crid, $apikey, $un, $pw);
     if ($rv === false) {
       echo "No history found";
     } else {
@@ -408,7 +408,7 @@ if ($printany === true) {
 	// previous_url will not be presented if there isn;t actually a previous to point to
 	$rv = get_hash5_simple($rv['csi18n_xlate_previous_url'], $apikey, $un, $pw);
 	if ($rv === false) {
-	  echo "No existing records found"; //get_hash3 caught this earlier, so shouldnt get here
+	  echo "No existing records found"; //get_hash4xunlvc caught this earlier, so shouldnt get here
 	} else {
 	  $sho_16000_deleted = false;
 	  if (isset($rv['csi18n_xlate_resource']['deleted']) && $rv['csi18n_xlate_resource']['deleted'] === 'true' ) {

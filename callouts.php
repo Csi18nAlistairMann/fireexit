@@ -114,20 +114,21 @@ echo "Example code: [ <a href='libcurl.php'>PHP using libcurl</a> | <a href='fop
 $visit_sid = 1;
 $visit_newmark = "pk-fireexit";
 $visit_lang = $al; //es salida de emergencia
-$response = get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw); 
+$rv = get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw); 
+$response = get_hash4simple($rv['xlate_loc'], $apikey, $un, $pw);
 
 echo "<div class='callout-dn border-callout-dn' style='position:absolute; top:55px; left:20px; background:#FF0000;'>";
 $trans_sid_designer = $visit_sid; // The SID of the designer
 $trans_newmark = $visit_newmark;
-if ($response['cxr'] === false) {
+if ($response === false) {
   $visibility_iv = 'anonymous';
   echo "<div class='container1' name='bub1a'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&trans_sid_designer=$trans_sid_designer&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
 } else {
-  $trans_sid = escapeHtml($response['cxr']['uploader_sid']);
-  $trans_lang = escapeHtml($response['cxr']['language']);
-  $trans_vis = escapeHtml($response['cxr']['visibility']);
-  $trans_crid = escapeHtml($response['cxr']['crid']);
-  $trans_trans = escapeHtml($response['cxr']['translation']);
+  $trans_sid = escapeHtml($response['csi18n_xlate_resource']['uploader_sid']);
+  $trans_lang = escapeHtml($response['csi18n_xlate_resource']['language']);
+  $trans_vis = escapeHtml($response['csi18n_xlate_resource']['visibility']);
+  $trans_crid = escapeHtml($response['csi18n_xlate_resource']['crid']);
+  $trans_trans = escapeHtml($response['csi18n_xlate_resource']['translation']);
 
   if (isset($f5reload) && $f5reload === "1") {
     echo "<div class='container1' name='bub1b'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&trans_sid_designer=$trans_sid_designer&newmark_iv=$visit_newmark&lang_iv=$trans_lang&trans_sid=$trans_sid&trans_vis=$trans_vis&trans_crid=$trans_crid&trans_trans=$trans_trans' target='translationframe'><strong><font size=+1>" . $trans_trans . "</font></strong></a></div>";
@@ -149,15 +150,15 @@ $visit_lang = $al; //es salida de emergencia
 $response = get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw); 
 */
 echo "<div class='callout-dn border-callout-dn' style='position:absolute; top:221px; left:21px; background:yellow;'>";
-if ($response['cxr'] === false) {
+if ($response === false) {
   $visibility_iv = 'anonymous';
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
   echo "<div class='container1'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></div>";
 } else {
-  $sid_iv = escapeHtml($response['cxr']['uploader_sid']);
-  $visibility_iv = escapeHtml($response['cxr']['visibility']);
-  $crid_iv = escapeHtml($response['cxr']['crid']);
-  $translation_iv = escapeHtml($response['cxr']['translation']);
+  $sid_iv = escapeHtml($response['csi18n_xlate_resource']['uploader_sid']);
+  $visibility_iv = escapeHtml($response['csi18n_xlate_resource']['visibility']);
+  $crid_iv = escapeHtml($response['csi18n_xlate_resource']['crid']);
+  $translation_iv = escapeHtml($response['csi18n_xlate_resource']['translation']);
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$sid_iv&crid_iv=$crid_iv' target='translationframe'><strong>$translation_iv</strong></a></div>";
   echo "<div class='container1'><strong><font size=+1>$translation_iv</font></strong></div>";
 }
@@ -174,15 +175,15 @@ $visit_lang = $al;
 $response = get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw); 
 */
 echo "<div class='callout border-callout' style='position:absolute; top:565px; left:22px; background:cyan;'>";
-if ($response['cxr'] === false) {
+if ($response === false) {
   $visibility_iv = 'anonymous';
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
   echo "<div class='container1'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></div>";
 } else {
-  $sid_iv = escapeHtml($response['cxr']['uploader_sid']);
-  $visibility_iv = escapeHtml($response['cxr']['visibility']);
-  $crid_iv = escapeHtml($response['cxr']['crid']);
-  $translation_iv = escapeHtml($response['cxr']['translation']);
+  $sid_iv = escapeHtml($response['csi18n_xlate_resource']['uploader_sid']);
+  $visibility_iv = escapeHtml($response['csi18n_xlate_resource']['visibility']);
+  $crid_iv = escapeHtml($response['csi18n_xlate_resource']['crid']);
+  $translation_iv = escapeHtml($response['csi18n_xlate_resource']['translation']);
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$sid_iv&crid_iv=$crid_iv' target='translationframe'><strong>$translation_iv</strong></a></div>";
   echo "<div class='container1'><strong><font size=+1>$translation_iv</font></strong></div>";
 }
@@ -199,15 +200,15 @@ $visit_lang = $al;
 $response = get_hash5nunl($visit_sid, $visit_newmark, $visit_lang, $apikey, $un, $pw); 
 */
 echo "<div class='callout border-callout' style='position:absolute; top:736px; left:23px; background:blue;'>";
-if ($response['cxr'] === false) {
+if ($response === false) {
   $visibility_iv = 'anonymous';
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$visit_sid&newmark_iv=$visit_newmark&lang_iv=$visit_lang' target='translationframe'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></a></div>";
   echo "<div class='container1'><strong>" . "(" . $response['status_code'] . ") " . $visit_newmark . "</strong></div>";
 } else {
-  $sid_iv = escapeHtml($response['cxr']['uploader_sid']);
-  $visibility_iv = escapeHtml($response['cxr']['visibility']);
-  $crid_iv = escapeHtml($response['cxr']['crid']);
-  $translation_iv = escapeHtml($response['cxr']['translation']);
+  $sid_iv = escapeHtml($response['csi18n_xlate_resource']['uploader_sid']);
+  $visibility_iv = escapeHtml($response['csi18n_xlate_resource']['visibility']);
+  $crid_iv = escapeHtml($response['csi18n_xlate_resource']['crid']);
+  $translation_iv = escapeHtml($response['csi18n_xlate_resource']['translation']);
   //  echo "<div class='container1'><a href='translation-iframe.php$mem&sid_iv=$sid_iv&crid_iv=$crid_iv' target='translationframe'><strong>$translation_iv</strong></a></div>";
   echo "<div class='container1'><strong><font size=+1>$translation_iv</font></strong></div>";
 }
